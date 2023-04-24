@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadona</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS datoteka -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <!-- JavaScript datoteka -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+      function showContact() {
+        alert("Please contact us at info@sadona.com");
+      }
+
+      function showGuidelines() {
+        alert("Please review our new safety guidelines on our website");
+      }
+    </script>
+    <script>
+      function showServices() {
+        alert("Services");
+      }
+    </script>
+
+  </head>
+<body>
+    <header>
+        <nav class="main-navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li class="dropdown">
+              <a href="#services">Services</a>
+              <ul>
+                <li><a href="#salon-services">Salon Services</a></li>
+                <li><a href="#spa-services">Spa Services</a></li>
+                <li><a href="#bridal-services">Bridal Services</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo">
+        </div>
+        <nav class="secondary-navigation">
+          <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="carousel">
+        <div class="carousel-container">
+          <button class="carousel-btn">Contact</button>
+          <div class="carousel">
+            <img src="img/cover.png" alt="Slika 1">
+            <img src="img/hair.png" alt="Slika 2">
+            <img src="img/relax.png" alt="Slika 3">
+            <img src="img/salt.png" alt="Slika 4">
+          </div>
+          <div class="carousel-nav">
+            <div class="carousel-dots">
+              <div class="carousel-dot active">1</div>
+              <div class="carousel-dot">2</div>
+              <div class="carousel-dot">3</div>
+              <div class="carousel-dot">4</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <script> 
+ function changeSlide(index) {
+  // Pronalazimo element "carousel" i sve slike unutar njega
+  const carousel = document.querySelector('.carousel');
+  const slides = carousel.querySelectorAll('img');
+  
+  // Postavljamo svim slikama da budu nevidljive
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+
+  // Postavljamo aktivnu sliku da bude vidljiva
+  slides[index].classList.add('active');
+
+  // Pronalazimo element "carousel-dots" i sve tačke unutar njega
+  const dotsContainer = document.querySelector('.carousel-dots');
+  const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+  // Postavljamo svim tačkama da ne budu aktivne
+  dots.forEach(dot => {
+    dot.classList.remove('active');
+  });
+
+  // Postavljamo aktivnu tačku da bude aktivna
+  dots[index].classList.add('active');
+}
+
+// Pronalazimo sve tačke
+const dots = document.querySelectorAll('.carousel-dot');
+
+// Za svaku tačku dodajemo "click" događaj
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    changeSlide(index);
+  });
+});
+
+  </script>
+      
+
+
+  <section class="main-content">
+    <section class="nova-sekcija">
+      <div class="container">
+        <h1>We Are Reopening</h1>
+        <p>Check out details about new safety guidelines</p>
+        <button onclick="showGuidelines()">Safety guidelines</button>
+      </div>
+    </section> 
+  </section> 
+
+
+    <style>
+      .nova-sekcija {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .nova-sekcija img {
+        margin: 0px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+
+<section class="our-story" id="our-story">
+  <div class="container">
+    <h2>Sadona was conceived with the belief that a salon and spa should be a welcome and tranquil experience.</h2>
+    <p>And from the moment you walk through our door, you will see exactly what we mean. Come, let's look around together.</p>
+    <button>Our Story</button>
+  </div>
+
+</section>  
+<section class="container" id="services">
+  <div class="row">
+    <div class="col">
+      <div class="text-container">
+        <h2>Salon Services</h2>
+        <p>Our salon is a forward-thinking studio with experts that understand your individuality and specialize in your unique beauty.</p>
+        <button onclick="showServices()">All Services</button>
+        <span></span>
+        <img src= "img/Icon open-arrow-bottom.png" alt="">
+        <h3>Check out more</h3>
+        <style>
+          .text-container h2 {
+            font-size: 50px;
+            font-family: prata;
+          }
+          .text-container p{
+            font-size: 16px;
+            font-family: barow;
+            align-content: center;
+          }
+          .text-container img{
+            margin-top: 200px;
+            padding: 30px;
+            border: 0px;
+            margin-bottom: -40px;
+           
+          }
+          .text-container h3{
+            font-size: 12px;
+            font-family: barow;
+            color: #803E38;
+            text-align: center;
+            position: relative;
+          }
+        </style>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="img-container">
+        <div class="img-container-small">
+          <img src="img/hair1.png" alt="" class="" />
+        </div>
+        <img src="img/hair.png" alt="" class="overlap" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="spa-section">
+  <div class="spa-overlay">
+    <h1 class="spa-title">Spa Services</h1>
+    <p>Both an escape and an oasis, the luxurious spa experiences at Sadona will leave you feeling soothed, energized and refreshed.</p>
+    <button class="spa-button">All Services</button>
+    <img src= "img/icon arrow.svg" alt="">
+        <h3>Check out more</h3>
+    <style>
+      .spa-overlay h1 {
+        font-size: 50px;
+        font-family: prata;
+        color: #fff;
+        text-align: left;
+        font-style: normal;
+      }
+      .spa-overlay p{
+        font-size: 16px;
+        font-family: barow;
+        color: #fff;
+        text-align: left;
+        font-style: normal;
+        }
+        .spa-overlay button{
+          color: #803E38;
+          background-color: #D1C1A5;
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          margin-bottom: 50px;
+        }
+        .spa-overlay img{
+            
+            padding: 30px;
+            border: 0px;
+            margin-right: 70px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+          }
+          .spa-overlay h3{
+            font-size: 10px;
+            font-family: barow;
+            color: #E7D1A7;
+            text-align: left;
+            position: relative;
+            margin-top: -20px;
+            margin-left: 80px;
+            padding: -120px;
+            margin-right: 70px;
+          }
+        
+
+    </style>
+  </div>
+</div>
+
+<section class="salt">
+  <div class="left">
+    <img src="img/sugar.svg" alt="">
+    <h1>Services</h1>
+    <style>
+      
+      .salt h1{
+        text-align: left;
+        font-size: 25px;
+        margin-top: 10px;
+      }
+      .salt p{
+        margin-top: 10px;
+        font-size: 16px;
+        font-family: barlow;
+      }
+      .salt{
+        font-size: 50px;
+        font-family: prata;
+        font-style: normal;
+      }
+    </style>
+    <h2>Salt</h2>
+    <p>Salt possesses wonderful healing and rejuvenation properties. Indulge in one of our salt treatments and experience strength and vitality from one of nature's most ancient forms of therapy.</p>
+  </div>
+  <div class="right">
+    <style>
+      .salt {
+        background-color: #D1C1A5;
+      }
+    </style>
+    <img src="img/salt.png" alt="Opis slike">
+  </div>
+</section>
+
+<section class="bridal-services">
+  <div class="bridal" style="background-image: url('img/bridal.png');">
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+    
+        
+    
+</body>
+</html>
